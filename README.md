@@ -1,7 +1,7 @@
 # Climber APP
 
-# MVVM architecture
-This app was developed in Model-View-ViewModel architecture, and provide a demonstration of how to use Android Jetpack components like **Data Binding**, **ViewModel**, **LiveData**.
+# Android Jetpack framework
+This app was developed in **Model-View-ViewModel** architecture, and provide a demonstration of how to use Android Jetpack components like **Data Binding**, **ViewModel**, **LiveData** for MVVM.
 Click [here](Source/app/src/main/java/com/test/climber) to go through the source code.
 
 # Automated UI test framework
