@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg"
+        tools:context=".activity.LoginActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="75dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username"
+                android:fontFamily="Helvetica"
+                android:textSize="14dp"
+                android:textColor="@color/gray_7B7B7B"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/username"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textSize="16dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/gray_707070"
+                android:theme="@style/ClimberEditText" />
+
+            <TextView
+                android:id="@+id/textViewPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:fontFamily="Helvetica"
+                android:textSize="14dp"
+                android:textColor="@color/gray_7B7B7B"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:textColorHint="@color/gray_707070"
+                android:theme="@style/ClimberEditText" />
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:alpha="0.5"
+                android:background="@drawable/round_corner_button"
+                android:fontFamily="Helvetica"
+                android:text="@string/login"
+                android:textColor="@android:color/white"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

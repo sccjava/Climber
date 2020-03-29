@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Climber</string>
+    <!-- LoginActivity -->
+    <string name="enter_user_pwd">Please enter user name and password!</string>
+    <string name="invalid_email">Please input valid email address!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+
+    <!-- DashboardActivity -->
+    <string name="steps">Steps</string>
+    <string name="steps_value">0</string>
+    <string name="what_day">Today</string>
+    <string name="name">Climber</string>
+</resources>

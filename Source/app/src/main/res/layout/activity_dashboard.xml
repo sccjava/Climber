@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg"
+        tools:context=".activity.DashboardActivity">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:gravity="center"
+            android:layout_marginTop="60dp">
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/avatar" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="Helvetica"
+                android:layout_marginStart="20dp"
+                android:textSize="30dp"
+                android:textColor="@android:color/background_dark"
+                android:text="@string/name" />
+        </LinearLayout>
+
+        <com.test.climber.customview.CircleProgressView
+            android:id="@+id/circleProgressBar"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            app:maxProgress="100"
+            app:progressColor="@color/red_FF0000"
+            app:roundColor="@color/gray_D8D8D8"
+            app:roundWidth="30dp"
+            app:startAngle="180" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="Helvetica"
+                android:text="@string/steps"
+                android:textColor="@android:color/white"
+                android:textSize="35dp" />
+
+            <TextView
+                android:id="@+id/steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="Helvetica"
+                android:text="@string/steps_value"
+                android:textColor="@android:color/white"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="Helvetica"
+                android:text="@string/what_day"
+                android:textColor="@android:color/white"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
