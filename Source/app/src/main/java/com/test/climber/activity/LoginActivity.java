@@ -20,7 +20,6 @@ import com.test.climber.viewmodel.LoginViewModel;
 public class LoginActivity extends AppCompatActivity {
     private LoginViewModel mViewModel;
     private ActivityLoginBinding mBinding;
-    private boolean mIsLoginReady;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,12 +2,12 @@ package com.test.climber;
 
 import androidx.test.espresso.intent.Intents;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
-import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.test.climber.activity.DashboardActivity;
 import com.test.climber.activity.LoginActivity;
 
+import org.hamcrest.Matcher;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -25,8 +25,10 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
+import static androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isEnabled;
+import static androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.not;
@@ -46,6 +48,8 @@ public class LoginActivityTest {
 
     @Test
     public void loginWithoutUsernamePasswordTest() {
+        onView(withId(R.id.textViewUsername)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.textViewPassword)).check(matches(not(isDisplayed())));
         onView(withId(R.id.userName)).perform(clearText());
         onView(withId(R.id.password)).perform(clearText());
         onView(withId(R.id.login)).perform(click());
@@ -53,21 +57,12 @@ public class LoginActivityTest {
     }
 
     @Test
-    public void promptTest() {
-        onView(withId(R.id.textViewUsername)).check(matches(not(isDisplayed())));
-        onView(withId(R.id.textViewPassword)).check(matches(not(isDisplayed())));
-        onView(withId(R.id.userName)).perform(replaceText("test.com"), closeSoftKeyboard());
-        onView(withId(R.id.password)).perform(replaceText("123456"), closeSoftKeyboard());
-        onView(withId(R.id.login)).perform(click());
-        onView(withId(R.id.textViewUsername)).check(matches(isDisplayed()));
-        onView(withId(R.id.textViewPassword)).check(matches(isDisplayed()));
-    }
-
-    @Test
     public void invalidEmailTest() {
         onView(withId(R.id.userName)).perform(replaceText("test.com"), closeSoftKeyboard());
         onView(withId(R.id.password)).perform(replaceText("123456"), closeSoftKeyboard());
         onView(withId(R.id.login)).perform(click());
+
+        // Check Toast if displayed
         onView(withText(R.string.invalid_email))
                 .inRoot(withDecorView(not(mActivityRule.getActivity().getWindow().getDecorView())))
                 .check(matches(isDisplayed()));
