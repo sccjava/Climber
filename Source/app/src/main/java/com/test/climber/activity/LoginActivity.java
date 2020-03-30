@@ -76,9 +76,7 @@ public class LoginActivity extends AppCompatActivity {
         mBinding.login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mIsLoginReady) {
-                    login();
-                }
+                login();
             }
         });
 
@@ -89,10 +87,10 @@ public class LoginActivity extends AppCompatActivity {
         if (mBinding.userName.getText().length() > 0
                 && mBinding.password.getText().length() > 0) {
             mBinding.login.setAlpha(1);
-            mIsLoginReady = true;
+            mBinding.login.setEnabled(true);
         } else {
             mBinding.login.setAlpha(0.5f);
-            mIsLoginReady = false;
+            mBinding.login.setEnabled(false);
         }
     }
 

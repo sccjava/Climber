@@ -26,6 +26,7 @@ import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isEnabled;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.not;
@@ -48,7 +49,7 @@ public class LoginActivityTest {
         onView(withId(R.id.userName)).perform(clearText());
         onView(withId(R.id.password)).perform(clearText());
         onView(withId(R.id.login)).perform(click());
-        intended(hasComponent(DashboardActivity.class.getName()));
+        onView(withId(R.id.login)).check(matches(not(isEnabled())));
     }
 
     @Test

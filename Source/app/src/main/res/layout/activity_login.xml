@@ -73,6 +73,7 @@
                 android:background="@drawable/round_corner_button"
                 android:fontFamily="Helvetica"
                 android:text="@string/login"
+                android:enabled="false"
                 android:textColor="@android:color/white"
                 android:textSize="16dp" />
 
